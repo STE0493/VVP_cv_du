@@ -1,3 +1,4 @@
 hello
 cs
+konflikt s masterbranch
 mastervetev
