@@ -20,6 +20,6 @@ Ukázkové použití je uvedeno v souboru *examples.ipybnb*
 #### Doporučeno:
 - import projectLibrary
 - vytvořit objekt třídy *Mandelbrot* nebo *Julia* s odpovídajícími parametry
-- zavolat funkci objektu *interactivePlot()*
+- zavolat funkci objektu *interactive_plot()*
 
-Lze také vypsat divergenční matici množiny (funkce *compute()*) nebo vykreslit neinteraktivní graf (funkce *plotSet()*).
+Lze také vypsat divergenční matici množiny (funkce *compute()*) nebo vykreslit neinteraktivní graf (funkce *plot_set()*).

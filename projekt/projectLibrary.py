@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from typing import Union
 import ipywidgets as widgets
 from ipywidgets import interact, interactive, fixed, interact_manual
+from numpy.typing import NDArray
 
 class Mandelbrot:
     """
@@ -16,7 +17,7 @@ class Mandelbrot:
 
     Recommended use:
         set = Mandelbrot(0, 0, 0, 1000, 100, 'prism')
-        set.interactivePlot()
+        set.interactive_plot()
 
     Necessary packages:
         import numpy as np
@@ -45,9 +46,9 @@ class Mandelbrot:
             assignes given values to Mandelbrot class and calls calculate() and plotMandelbrot() methods
         calculate()
             calculates divegence matrix
-        plotSet()
+        plot_set()
             plots the Mandelbrot set
-        interactivePlot()
+        interactive_plot()
             creates interactive plot of the Mandelbrot set
     """
     def __init__(self, Cr: Union[int,float], Ci: Union[int,float], zoom: int, n: int, k: int, colormap: str):
@@ -131,9 +132,9 @@ class Mandelbrot:
         #calculate divergence matrix
         self.matrix = self.calculate()
         #plot Mandelbrot set
-        self.plotSet()
+        self.plot_set()
 
-    def calculate(self) -> np.ndarray:
+    def calculate(self) -> NDArray[np.float64]:
         """
         Calculates divergence matrix of Mandelbrot set
 
@@ -159,7 +160,7 @@ class Mandelbrot:
 
         return self.matrix
             
-    def plotSet(self):
+    def plot_set(self):
         """
         Plots the Mandelbrot set
 
@@ -186,7 +187,7 @@ class Mandelbrot:
         #plot finished modified divergence matrix
         ax.imshow(self.matrix, cmap=self.colormap)
         
-    def interactivePlot(self):
+    def interactive_plot(self):
         """
         Creates interactive plot of the Mandelbrot set using ipywidgets
 
@@ -245,12 +246,12 @@ class Julia:
 
     Methods:
         run(Zr, Zi, n, k, zoom, Cr, Ci, colormap)
-            assignes given values to Julia class and calls calculate() and plotSet() methods
+            assignes given values to Julia class and calls calculate() and plot_set() methods
         calculate()
             calculates the (modified) divegence matrix of Julia set
-        plotSet()
+        plot_set()
             plots the Julia set
-        interactivePlot()
+        interactive_plot()
             creates interactive plot of the Julia set
     """
     def __init__(self, Zr: Union[int,float], Zi: Union[int,float], n: int, k: int, zoom: int, Cr: Union[int,float], Ci: Union[int,float], colormap: str):
@@ -348,9 +349,9 @@ class Julia:
         #calculate divergence matrix
         self.matrix = self.calculate()
         #plot Mandelbrot set
-        self.plotSet()
+        self.plot_set()
 
-    def calculate(self) -> np.ndarray:
+    def calculate(self) ->np.float64:
         """
         Calculates divergence matrix (self.matrix) of Julia set
 
@@ -374,7 +375,7 @@ class Julia:
 
         return self.matrix
     
-    def plotSet(self):
+    def plot_set(self):
         """
         Plots the Julia set
 
@@ -401,7 +402,7 @@ class Julia:
         #plot finished modified divergence matrix
         ax.imshow(self.matrix, cmap=self.colormap)
         
-    def interactivePlot(self):
+    def interactive_plot(self):
         """
         Creates interactive plot of the Julia set using ipywidgets
 
